@@ -22,17 +22,9 @@
                 <div id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mrg">
                         <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle mouse-efeito-navbar" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><img src="img/perfil.png"
-                                    width="50px"></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item dpdefect" href="login.html">Fazer login</a></li>
-                                <li><a class="dropdown-item dpdefect" href="register.html">Criar conta</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item dpdefect" href="index.html">Sair</a></li>
-                            </ul>
+                            <div class="header-picture">
+                                <!-- Inserido dinamicamente -->
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -49,12 +41,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link button-gamer" href="Catalog.html" aria-current="page"
-                                type="submit">Jogar
+                            <a class="nav-link button-gamer" href="Catalog.html" aria-current="page" type="submit">Jogar
                                 Agora</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button-gamer" href="EventScreen.html" aria-current="page" type="submit">Eventos</a>
+                            <a class="nav-link button-gamer" href="EventScreen.html" aria-current="page"
+                                type="submit">Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link button-gamer" href="ReportChannel.html" aria-current="page"
@@ -67,12 +59,15 @@
                                 Comunidades
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item dpdefect" href="my-community.html">Minhas Comunidades</a></li>
+                                <li><a class="dropdown-item dpdefect" href="my-community.html">Minhas Comunidades</a>
+                                </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item dpdefect" href="communityCreate.html">Criar Comunidade</a></li>
-                                <li><a class="dropdown-item dpdefect" href="community.html">Encontre Comunidades</a></li>
+                                <li><a class="dropdown-item dpdefect" href="communityCreate.html">Criar Comunidade</a>
+                                </li>
+                                <li><a class="dropdown-item dpdefect" href="community.html">Encontre Comunidades</a>
+                                </li>
                             </ul>
                         </li>
                 </div>
@@ -88,28 +83,33 @@
     <!-- inicio da main body -->
     <main>
         <!-- inicio tela de login -->
-        <div class="container-fluid" style="margin-top: 5%; margin-bottom: 5%;">
-            <div class="row" style="justify-content: center; text-align: center; align-items: center;">
-                <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
-                    <form class="p-4 p-md-5 border rounded-4 bg-black efeito-fundo">
-                        <h1 class="h3 3mb-3 fw-bold" style="color: white;">LOGIN</h1>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="inputEmail" placeholder="E-mail" />
-                            <label for="inputEmail" style="color:gray;">E-mail :</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Senha" />
-                            <label for="inputPassword" style="color:gray;">Senha :</label>
-                        </div>
-                        <div class="form-check text-start my-3" style="color: white;">
-                            <input type="checkbox" class="form-check-input" id="flexCheckDefault" />
-                            <label>LEMBRAR DADOS</label>
-                        </div>
-                        <a href="index-logged.html" class="btn button-gamer w-100 py-2">Login</a>
-                    </form>
+        <div>
+            <div class="container-fluid" style="margin-top: 5%; margin-bottom: 5%;">
+                <div class="row" style="justify-content: center; text-align: center; align-items: center;">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
+                        <form class="p-4 p-md-5 border rounded-4 bg-black efeito-fundo" id="userLogin">
+                            <h1 class="h3 3mb-3 fw-bold" style="color: white;">LOGIN</h1>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="inputEmail" placeholder="E-mail" />
+                                <label for="inputEmail" style="color:gray;">E-mail :</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Senha" />
+                                <label for="inputPassword" style="color:gray;">Senha :</label>
+                            </div>
+                            <br>
+                            <!-- <div class="form-check text-start my-3" style="color: white;">
+                                    <input type="checkbox" class="form-check-input" id="flexCheckDefault" />
+                                    <label>LEMBRAR DADOS</label>
+                                </div> -->
+
+                            <button type="submit" class="btn button-gamer w-100 py-2" id="login-button">Login</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+
         <!-- final tela de login -->
     </main>
     <!-- final main body -->
@@ -128,7 +128,8 @@
                     <h5 class="mb-3" style="letter-spacing: 2px;">Comunidade</h5>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-1">
-                            <a href="communityCreate.html" style="text-decoration: none; color: aqua;">Formador de equipe</a>
+                            <a href="communityCreate.html" style="text-decoration: none; color: aqua;">Formador de
+                                equipe</a>
                         </li>
                         <li class="mb-1">
                             <a href="community.html" style="text-decoration: none; color: aqua;">Grupo discord</a>
@@ -181,6 +182,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
 </body>
 
 </html>

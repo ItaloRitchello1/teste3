@@ -22,6 +22,7 @@ main {
 }
 
 .user-list{
+
   align-self: center;
   height: 500px;
   max-width: 750px;
@@ -179,4 +180,41 @@ nav {
     to {
         background-position: 4500vh;
     }
+}
+
+.neon-background {
+    background: linear-gradient(270deg, #ff00ea7e, rgba(129, 87, 207, 0.404), rgba(66, 0, 219, 0.685));
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 52s ease infinite;
+    -moz-animation: AnimationName 52s ease infinite;
+    animation: AnimationName 52s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
+}
+
+
+.no-scrollbar {
+    overflow-x: hidden;
+    overflow-y:auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    width: 0; 
 }

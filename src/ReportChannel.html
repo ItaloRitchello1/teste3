@@ -6,8 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style-rc.css">
+
+
+
+    <!--SMTP CDN-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("eHrSoEiSbqyhevql0");
+        })();
+    </script>
+
+
     <title>MatchTime</title>
 </head>
 
@@ -22,17 +35,9 @@
                 <div id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mrg">
                         <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle mouse-efeito-navbar" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><img src="img/perfil.png"
-                                    width="50px"></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item dpdefect" href="login.html">Fazer login</a></li>
-                                <li><a class="dropdown-item dpdefect" href="register.html">Criar conta</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item dpdefect" href="index.html">Sair</a></li>
-                            </ul>
+                            <div class="header-picture">
+                                <!-- Inserido dinamicamente -->
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -49,12 +54,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link button-gamer" href="Catalog.html" aria-current="page"
-                                type="submit">Jogar
+                            <a class="nav-link button-gamer" href="Catalog.html" aria-current="page" type="submit">Jogar
                                 Agora</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button-gamer" href="EventScreen.html" aria-current="page" type="submit">Eventos</a>
+                            <a class="nav-link button-gamer" href="EventScreen.html" aria-current="page"
+                                type="submit">Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link button-gamer" href="ReportChannel.html" aria-current="page"
@@ -67,12 +72,15 @@
                                 Comunidades
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item dpdefect" href="my-community.html">Minhas Comunidades</a></li>
+                                <li><a class="dropdown-item dpdefect" href="my-community.html">Minhas Comunidades</a>
+                                </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item dpdefect" href="communityCreate.html">Criar Comunidade</a></li>
-                                <li><a class="dropdown-item dpdefect" href="community.html">Encontre Comunidades</a></li>
+                                <li><a class="dropdown-item dpdefect" href="communityCreate.html">Criar Comunidade</a>
+                                </li>
+                                <li><a class="dropdown-item dpdefect" href="community.html">Encontre Comunidades</a>
+                                </li>
                             </ul>
                         </li>
                 </div>
@@ -88,97 +96,78 @@
 
     <!--inicio da main body-->
     <main>
-        <div class="Denuncias">
-            <div>
-                <h1
-                    style="margin-top: 50px; text-align: center; color:white; text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F">
-                    Canal de denúncias</h1>
-            </div>
 
-            <div>
-                <form>
-                    <fieldset>
+        <div class="container    neon-background" style="border-radius: 5%;margin-top: 50px; margin-bottom: 50px;">
+            <div class="row">
+                <div class="col-md-6 p-5">
+                    <h3 style="text-align: center; color: white; text-shadow: 0 0 0.2em rgb(124, 109, 223), 0 0 0.2em rgb(184, 73, 73),
+                    0 0 0.2em rgb(138, 18, 18)">Escolha um usuário para denunciar:</h3>
 
-                        <div>
-                            <h3 style="margin-top: 30px;">Escolha um usuário para denunciar:</h3>
-                            <div class="user-list">
-                                <div>
-                                    <ul>
-                                        <li>
-                                            <div class="user-sample" tabindex="1">
-                                                <img src="img/perfil-icon.svg" class="userimg">
-                                                <span> user-sample1 </span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="user-sample" tabindex="2">
-                                                <img src="img/perfil-icon.svg" class="userimg">
-                                                <span> user-sample2 </span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="user-sample" tabindex="3">
-                                                <img src="img/perfil-icon.svg" class="userimg">
-                                                <span> user-sample3 </span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
 
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="text" placeholder="Pesquise um usuário"
-                                    aria-label="Search">
-                            </form>
+                    <div class="user-list" style="background-color: rgb(0, 0, 0);">
+                        <div id="usuariosDisponiveis" class="overflow-auto no-scrollbar" style="max-height: 100%;">
                         </div>
+                    </div>
 
-                        <div>
-                            <h4 style="margin-top: 30px;">Selecione uma ou mais das seguintes opções:</h4>
-                            <div class="Checkbox">
-                                <input type="checkbox" name="motive1" id="motive1" value="Preconceito">
-                                <label for="motive1">Preconceito</label><br>
+                    <div class="d-flex" role="search">
+                        <input id="denunciado" class="form-control me-2 mt-3 " style="height:30px;width:457px;"
+                            type="text" placeholder="Digite o Nick do Usuário a Denunciar" aria-label="Search">
 
-                                <input type="checkbox" name="motive2" id="motive2" value="Toxicidade">
-                                <label for="motive2">Toxicidade</label><br>
+                        <button id="pesquisarUsuario" class="button-gamer"
+                            style="margin-top:10px; padding: 10px; align-items: center;" type="submit">Confirma
+                        </button>
 
-                                <input type="checkbox" name="motive3" id="motive3" value="Linguagem ofensiva">
-                                <label for="motive3">Linguagem ofensiva</label><br>
+                    </div>
 
-                                <input type="checkbox" name="motive4" id="motive4" value="Abuso sexual">
-                                <label for="motive4">Abuso sexual</label><br>
+                    <div>
+                        <h4 style="margin-top: 30px; text-align: center; color: white; text-shadow: 0 0 0.2em rgb(27, 1, 194), 0 0 0.2em rgb(255, 119, 119),
+                        0 0 0.2em rgb(18, 114, 138)">Selecione uma ou mais das seguintes
+                            opções:</h4>
+                        <p class="small" style="text-align: center;">(limite de 3)</p>
+                        <div class="Checkbox">
+                            <input type="checkbox" id="motive1" value="Preconceito" onchange="updateMessageField()">
+                            <label for="motive1">Preconceito</label><br>
 
-                                <input type="checkbox" name="motive5" id="motive5" value="Nome e/ou perfil sugestivo">
-                                <label for="motive5">Nome e/ou perfil sugestivo</label><br>
+                            <input type="checkbox" id="motive2" value="Toxicidade" onchange="updateMessageField()">
+                            <label for="motive2">Toxicidade</label><br>
 
-                                <input type="checkbox" name="motive6" id="motive6" value="Outros">
-                                <label for="motive6">Outros</label><br>
-                            </div>
+                            <input type="checkbox" id="motive3" value="Linguagem ofensiva"
+                                onchange="updateMessageField()">
+                            <label for="motive3">Linguagem ofensiva</label><br>
+
+                            <input type="checkbox" id="motive4" value="Abuso sexual" onchange="updateMessageField()">
+                            <label for="motive4">Abuso sexual</label><br>
+
+                            <input type="checkbox" id="motive5" value="Nome e/ou perfil sugestivo"
+                                onchange="updateMessageField()">
+                            <label for="motive5">Nome e/ou perfil inapropriado</label><br>
+
+                            <input type="checkbox" id="motive6" value="Outros" onchange="updateMessageField()">
+                            <label for="motive6">Outros</label><br>
                         </div>
-
-                        <div>
-                            <h4 style="margin-top: 30px;">Seu email: </h4>
-                            <input type="text"
-                                style="border-radius: 5px; width: 80%px; max-width: 450px; min-width: fit-content;"
-                                placeholder="Insira seu email" required>
-                        </div>
-
-                        <div>
-                            <h4 style="margin-top: 30px;">Descreva melhor a situação presenciada:</h4>
-                            <input class="input" type="text"
-                                style="border-radius: 5px; width: 80%; max-width: 450px; min-width: fit-content; height: 100px;"
-                                placeholder="Descreva o ocorrido" required>
-                        </div>
-
-                        <div>
-                            <button class="button-gamer" style="padding: 10px; margin: 30px; background-color: azure;"
-                                type="submit">ENVIAR</button>
-                        </div>
-
-
-                    </fieldset>
-                </form>
+                    </div>
+                </div>
+                <div class="col-md-6 border-left py-3">
+                    <h3 style="color: rgb(255, 255, 255);margin-top: 30px; text-align: center;">Agora Preencha o
+                        formulário</h3>
+                    <div class="form-group">
+                        <h5 for="name">Name</h5>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" />
+                    </div>
+                    <div class="form-group">
+                        <h5 for="email">Email</h5>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" />
+                    </div>
+                    <div class="form-group">
+                        <h5 for="message">Message</h5>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
+                    <button id="submitButton" class="button-gamer mt-3" style="width:90px;"
+                        onclick="sendMail()">Enviar</button>
+                </div>
             </div>
         </div>
+
     </main>
 
     <!-- inicio rodapé -->
@@ -195,10 +184,11 @@
                     <h5 class="mb-3" style="letter-spacing: 2px;">Comunidade</h5>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-1">
-                            <a href="communityCreate.html" style="text-decoration: none; color: aqua;">Formador de equipe</a>
+                            <a href="/src/communityCreate.html" style="text-decoration: none; color: aqua;">Formador de
+                                equipe</a>
                         </li>
                         <li class="mb-1">
-                            <a href="community.html" style="text-decoration: none; color: aqua;">Grupo discord</a>
+                            <a href="/src/community.html" style="text-decoration: none; color: aqua;">Grupo discord</a>
                         </li>
                     </ul>
                 </div>
@@ -209,7 +199,7 @@
                             <a href="#!" style="text-decoration: none; color: aqua;">Perguntas Frequentes</a>
                         </li>
                         <li class="mb-1">
-                            <a href="ReportChannel.html" style="text-decoration: none; color: aqua;">Denuncias</a>
+                            <a href="/src/ReportChannel.html" style="text-decoration: none; color: aqua;">Denuncias</a>
                         </li>
                     </ul>
                 </div>
@@ -246,7 +236,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-
+    <script src="reportChannel.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

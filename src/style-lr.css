@@ -143,9 +143,9 @@ nav {
     margin-bottom: 60px;
     display: flex;
     padding: 5px;
-    background-color: rgba(255, 255, 255, 0.185);
     justify-content: center;
     text-align: center;
+
     height: 100%;
     margin: 1%;
     margin-bottom: 1%;
@@ -163,7 +163,7 @@ nav {
     display: flex;
     height: 100%;
     padding: 5px;
-    background-color: gray;
+    background-color: rgb(0, 0, 0);
     text-align: center;
 }
 
@@ -178,7 +178,7 @@ nav {
     justify-content: center;
 }
 
-.button-input{
+.button-input {
     border-radius: 10px;
     padding: 5px;
 }
@@ -188,7 +188,7 @@ nav {
     padding: 0;
 }
 
-.text-chat{
+.text-chat {
     border-radius: 30px;
     display: grid;
     padding: 5px;
@@ -199,7 +199,7 @@ nav {
     height: 30px;
 }
 
-.text-chat-2{
+.text-chat-2 {
     border-radius: 30px;
     display: grid;
     padding: 5px;
@@ -208,4 +208,208 @@ nav {
 
     width: 150px;
     height: 30px;
+}
+
+/*Aqui já é o chat*/
+
+
+
+.login {
+    width: 100%;
+    max-width: 330px;
+    background-color: #064106;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 40px;
+}
+
+.login>h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login__input {
+    border: none;
+    padding: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #121212;
+    color: #f2f2f2;
+    outline: none;
+    border-radius: 5px;
+}
+
+.login__input:focus {
+    outline: 2px solid #f2f2f2;
+}
+
+.login__button {
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    background-color: #ddd;
+    cursor: pointer;
+    color: #121212;
+}
+
+.login__button:hover {
+    background-color: #fff;
+}
+
+.chat {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat__messages {
+    flex-grow: 1;
+    padding: 30px 30px 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.chat__form {
+    background-color: #191919;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.chat__input {
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    flex-grow: 1;
+    background-color: #212121;
+    outline: none;
+    color: #f2f2f2;
+    font-size: 1rem;
+}
+
+.chat__button {
+    border: none;
+    background: none;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+.chat__button>span {
+    font-size: 1.8rem;
+}
+
+.chat__messages>div {
+    padding: 10px;
+
+    max-width: 250px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 22px;
+}
+
+.message--self {
+    background-color: #3e962c;
+    color: #ffffff;
+    border-radius: 10px 10px 0 10px;
+    align-self: flex-end;
+}
+
+.message--other {
+    background-color: #0a4d04;
+    color: #ffffff;
+    border-radius: 0 10px 10px 10px;
+    align-self: flex-start;
+}
+
+.message--sender {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: rgb(218, 221, 14);
+}
+
+
+
+
+.neon-background {
+    background: linear-gradient(270deg, #ff00ea7e, rgba(129, 87, 207, 0.404), rgba(66, 0, 219, 0.685));
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 52s ease infinite;
+    -moz-animation: AnimationName 52s ease infinite;
+    animation: AnimationName 52s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 7%
+    }
+
+    50% {
+        background-position: 100% 94%
+    }
+
+    100% {
+        background-position: 0% 7%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 7%
+    }
+
+    50% {
+        background-position: 100% 94%
+    }
+
+    100% {
+        background-position: 0% 7%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 7%
+    }
+
+    50% {
+        background-position: 100% 94%
+    }
+
+    100% {
+        background-position: 0% 7%
+    }
+}
+
+/* scrolbar*/
+.no-scrollbar {
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    width: 0;
 }
