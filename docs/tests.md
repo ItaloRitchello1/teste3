@@ -25,35 +25,35 @@ Nesta seção o grupo deverá documentar os testes de software que verificam a c
 Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe qual o Requisito  Funcional ou não funcional que ele está verificando. Associe também a página (ou artefato) onde o teste será realizado e descreva o cenário do teste. Veja a tabela de exemplo.
 
 
-**Caso de Teste** | **CT01 - Criar conta parte 1**
+**Caso de Teste** | **CT01 - Sala De Lobby**
  :--------------: | ------------
-**Procedimento**  | 1) Usuário informa nome, sobrenome, email, senha, Estado e Cidade e clica no botão "Continuar".<br>2) A aplicação verifica se os dados são válidos e informa ao usuário caso não sejam.
-**Requisitos associados** | RF-001
-**Resultado esperado** | Prosseguir para a parte 2 do cadastro.
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro.
+**Procedimento**  | 1) O usuário entrou na sala que deseja.<br>2)A aplicação permite que o usuário converse no chat e escolha um time.
+**Requisitos associados** | RF-009
+**Resultado esperado** | Dialogo pelo chat, e adição de usuario ao time direcionado.
+**Dados de entrada** | A escolha do usuário.
 **Resultado obtido** | Sucesso.
 
-**Caso de Teste** | **CT02 - Criar conta parte 2**
+**Caso de Teste** | **CT02 - Sala de Jogos**
  :--------------: | ------------
-**Procedimento**  | 1) Usuário informa gênero, seu tipo de usuário (cuidador ou comum), data de nascimento e clica em criar.<br>2) A aplicação verifica se os dados são válidos e informa ao usuário caso não sejam.<br> 3) A aplicação armazena os dados e direciona o usuário para a tela de login.
-**Requisitos associados** | RF-001
-**Resultado esperado** | Criação de cadastro
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro.
+**Procedimento**  | 1) Usuário escolhe qual sala e qual jogo deseja entrar<br>
+**Requisitos associados** | RF-008
+**Resultado esperado** | Redirecionamento para a sala de lobby
+**Dados de entrada** | A escolha do usuário
 **Resultado obtido** | Sucesso.
 
 ## Registro dos Testes de Software
 
 Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
 
-|*Caso de Teste*                                 |*TC-01 - Criar uma conta*                                         |
+|*Caso de Teste*                                 |*TC-01 - Sala De Lobby*                                         |
 |---|---|
-|Requisito Associado | RF-004 - Usuários não autenticados podem se cadastrar para criar uma conta e serem autenticados.|
-|Link do vídeo do teste realizado: | https://1drv.ms/u/s!AhD2JqpOUvJChapRtRSQ9vPzbNLwGA?e=mxZs6t| 
+|Requisito Associado | RF-009 - Usuários pode se comunicar pelo chat |
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/1SUAi0m_Egk7nzbhiUDPrhDdLGylzpGXC/view?usp=drive_link | 
 
-|*Caso de Teste*                                 |*TC-02 - Efetuar Login (usuário autenticado)*                                         |
+|*Caso de Teste*                                 |*TC-02 - Sala de Jogos*                                         |
 |---|---|
-|Requisito Associado | RF-004 - Usuários não autenticados podem se cadastrar para criar uma conta e serem autenticados.|
-|Link do vídeo do teste realizado: | https://1drv.ms/v/s!AhD2JqpOUvJChapQ8CPXL-TI_A7iVg?e=spD3Ar | 
+|Requisito Associado | RF-008 - Usuários pode escolher qual sala ele vai entrar e sobre qual jogo.|
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/1By1BCWNo_-_koQo8uD3UY_Mo1gNvJwut/view?usp=drive_link | 
 
 
 ## Avaliação dos Testes de Software
