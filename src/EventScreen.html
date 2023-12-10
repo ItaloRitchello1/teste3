@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
     <link rel="stylesheet" href="style-es.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="main.js" defer></script>
+    <script src="event.js" defer></script>
     <title>MatchTime</title>
 </head>
 
@@ -41,12 +43,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link button-gamer" href="Catalog.html" aria-current="page"
-                                type="submit">Jogar
+                            <a class="nav-link button-gamer" href="Catalog.html" aria-current="page" type="submit">Jogar
                                 Agora</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button-gamer" href="EventScreen.html" aria-current="page" type="submit">Eventos</a>
+                            <a class="nav-link button-gamer" href="EventScreen.html" aria-current="page"
+                                type="submit">Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link button-gamer" href="ReportChannel.html" aria-current="page"
@@ -59,12 +61,15 @@
                                 Comunidades
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item dpdefect" href="my-community.html">Minhas Comunidades</a></li>
+                                <li><a class="dropdown-item dpdefect" href="my-community.html">Minhas Comunidades</a>
+                                </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item dpdefect" href="communityCreate.html">Criar Comunidade</a></li>
-                                <li><a class="dropdown-item dpdefect" href="community.html">Encontre Comunidades</a></li>
+                                <li><a class="dropdown-item dpdefect" href="communityCreate.html">Criar Comunidade</a>
+                                </li>
+                                <li><a class="dropdown-item dpdefect" href="community.html">Encontre Comunidades</a>
+                                </li>
                             </ul>
                         </li>
                 </div>
@@ -79,114 +84,15 @@
     <!-- final navbar -->
 
     <!-- inicio da main body -->
+
     <main>
         <div class="container-fluid">
             <h1
                 style="margin: 50px;text-align: center; color:white; text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F">
                 Eventos MatchTime</h1>
-            <div class="container-fluid">
-                <div class="row efeito-fundo p-4"
-                    style=" border-radius: 10px; margin-bottom: 30px; display: flex; padding: 20px;">
-                    <div class="col-lg-2 col-md-6 col-sm-12 event"
-                        style="display: flex; justify-content: center; text-align: center;">
-                        <img style="width: 85%; height: 100%; border-radius: 30px;" src="img/lol-cover-img.jpg"
-                            class="game-poster">
-                    </div>
-                    <div class="col-lg-9 col-md-6 col-sm-12">
-                        <div class="event-text">
-                            <h4
-                                style="margin: 10px; padding: 5px; text-align: left; color:white; text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F">
-                                O Verdadeiro Carry do Time: Campeonato x1 de Suportes</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quae cumque, eum, totam
-                                nam
-                                ex
-                                eaque impedit doloribus quis, porro et quibusdam tenetur recusandae deleniti? Iusto,
-                                tenetur
-                                earum
-                                eius vero ipsam distinctio voluptate. Reprehenderit molestiae dicta quia, iusto tenetur
-                                dignissimos
-                                aperiam natus nam veritatis qui voluptate, dolorem possimus consequatur aut.
-                            </p>
 
-                            <div class="botao-jogar">
-                                <button class="button-gamer"
-                                    style="padding: 10px; align-self: auto; background-color: azure;"
-                                    type="button">Jogar
-                                    Agora</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row efeito-fundo"
-                    style=" border-radius: 10px; margin-bottom: 30px; display: flex; padding: 20px;">
-                    <div class="col-lg-2 col-md-6 col-sm-12 event"
-                        style="display: flex; justify-content: center; text-align: center;">
-                        <img style="width: 85%; height: 100%; border-radius: 30px;" src="img/val-cover-img.jpg" class="game-poster">
-                    </div>
-                    <div class="col-lg-9 col-md-6 col-sm-12">
-                        <div class="event-text">
-                            <h4
-                                style="margin: 10px; padding: 5px; text-align: left; color:white; text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F">
-                                Gun Game sem estresse</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, sequi? Voluptate,
-                                quod
-                                sunt
-                                consequatur libero minus reiciendis deserunt expedita cumque distinctio est praesentium,
-                                reprehenderit quae sit esse provident, ratione veniam inventore nihil voluptatibus
-                                veritatis.
-                                Itaque ullam hic, obcaecati molestias voluptas nihil optio at in ratione expedita. Esse
-                                perferendis, suscipit tenetur atque ullam animi ratione odio eius sunt, facere inventore
-                                cumque.
-                            </p>
+            <div class="container-fluid" id="event-container"></div>
 
-                            <div class="botao-jogar">
-                                <button class="button-gamer"
-                                    style="padding: 10px; align-self: auto; background-color: azure;"
-                                    type="button">Jogar
-                                    Agora</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row efeito-fundo"
-                    style=" border-radius: 10px; margin-bottom: 30px; display: flex; padding: 20px;">
-                    <div class="col-lg-2 col-md-6 col-sm-12 event"
-                        style="display: flex; justify-content: center; text-align: center;">
-                        <img style="width: 85%; height: 100%; border-radius: 30px;" src="img/csgo-cover-img.jpg" class="game-poster">
-                    </div>
-                    <div class="col-lg-9 col-md-6 col-sm-12">
-                        <div class="event-text">
-                            <h4
-                                style="margin: 10px; padding: 5px; text-align: left; color:white; text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F">
-                                Na mão você se garante? Free-for-All só na faquinha</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo, ratione soluta eos
-                                rerum
-                                vel
-                                at tenetur. Rem voluptate nobis tenetur quasi! Nobis velit voluptatem perspiciatis
-                                eligendi
-                                fugiat minima fuga quaerat, magnam asperiores sint illum libero odit numquam sit error
-                                cum
-                                minus
-                                pariatur consequuntur ullam consequatur dolore nemo delectus dignissimos corporis.
-                                Explicabo
-                                voluptates, omnis iste quo vero, et natus velit perspiciatis obcaecati fugiat delectus.
-                                Laboriosam eos eveniet perspiciatis esse molestiae.
-                            </p>
-
-                            <div class="botao-jogar">
-                                <button class="button-gamer"
-                                    style="padding: 10px; align-self: auto; background-color: azure;"
-                                    type="button">Jogar
-                                    Agora</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -206,7 +112,8 @@
                     <h5 class="mb-3" style="letter-spacing: 2px;">Comunidade</h5>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-1">
-                            <a href="communityCreate.html" style="text-decoration: none; color: aqua;">Formador de equipe</a>
+                            <a href="communityCreate.html" style="text-decoration: none; color: aqua;">Formador de
+                                equipe</a>
                         </li>
                         <li class="mb-1">
                             <a href="community.html" style="text-decoration: none; color: aqua;">Grupo discord</a>
@@ -259,7 +166,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script src="main.js"></script>
 </body>
 
 </html>
