@@ -22,17 +22,9 @@
                 <div id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mrg">
                         <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle mouse-efeito-navbar" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><img src="img/gojo.png"
-                                    style="border-radius: 30px;" width="50px"></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item dpdefect" href="Gprofile.html">Ver perfil</a></li>
-                                <li><a class="dropdown-item dpdefect" href="editprofile.html">Editar perfil</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item dpdefect" href="index.html">Sair</a></li>
-                            </ul>
+                            <div class="header-picture">
+                                <!-- Inserido dinamicamente -->
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -49,8 +41,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link button-gamer" href="Catalog.html" aria-current="page"
-                                type="submit">Jogar
+                            <a class="nav-link button-gamer" href="Catalog.html" aria-current="page" type="submit">Jogar
                                 Agora</a>
                         </li>
                         <li class="nav-item">
@@ -68,13 +59,15 @@
                                 Comunidades
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item dpdefect" href="my-community.html">Minhas Comunidades</a></li>
+                                <li><a class="dropdown-item dpdefect" href="my-community.html">Minhas Comunidades</a>
+                                </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item dpdefect" href="communityCreate.html">Criar Comunidade</a></li>
-                                <li><a class="dropdown-item dpdefect" href="community.html">Encontre
-                                        Comunidades</a></li>
+                                <li><a class="dropdown-item dpdefect" href="communityCreate.html">Criar Comunidade</a>
+                                </li>
+                                <li><a class="dropdown-item dpdefect" href="community.html">Encontre Comunidades</a>
+                                </li>
                             </ul>
                         </li>
                 </div>
@@ -91,50 +84,97 @@
     <div class="container">
         <main>
             <div class="container mt-5">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-                        <h2>Jogador Número 1</h2>
-                        <img id="profileImage" src="img/perfil-icon.svg" style="width: 30%;"
-                            class="img-fluid rounded-circle" alt="Foto de Perfil">
+                <h4 style="margin-bottom: 50px; text-align: center; color:white;">
+                    Preencha os campos que deseja mudar e insira um "0" nos que deseja manter.
+                </h4>
+                <div id="profileEdit">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+                            <div id="currentName">
+                                <h2>Jogador Número 1</h2> <!--Nome inserido pelo JS-->
+                            </div>
+                            <div>
+                                <h5>Nome do usuário:</h5>
+                                <input type="text" id="editUsername" name="editUsername" placeholder=" Nome aqui"
+                                    style="border-radius: 5px; max-width: 300px; min-width: fit-content; height: 30px; width: 80%;">
+                            </div>
 
-                        <button onclick="document.getElementById('fileInput').click()" id="selectPhotoButton"
-                            class="button-gamer">Editar
-                            Foto </button>
-                        <input type="file" id="fileInput" style="display: none;">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <h4>Bio do Jogador</h4>
-                        <p id="bioText">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quae cumque, eum, totam nam
-                            ex
-                            eaque impedit doloribus quis, porro et quibusdam tenetur recusandae deleniti? Iusto, tenetur
-                            earum eius vero ipsam distinctio voluptate. Reprehenderit molestiae dicta quia, iusto
-                            tenetur
-                            dignissimos aperiam natus nam veritatis qui voluptate, dolorem possimus consequatur aut.
-                        </p>
-                        <textarea id="bioTextarea" style="display: none;"></textarea>
-                        <button id="editBioButton" onclick="editBio()" class="button-gamer">Editar Bio</button>
-                    </div>
-                    <h4
-                        style="margin: 50px;text-align: left; color:white; text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F">
-                        Jogos Jogados
-                    </h4>
+                            <br>
+                            <div id="currentPfp">
+                                <img src="img/perfil-icon.svg" style="width: 30%;" class="img-fluid rounded-circle"
+                                    alt="Foto de Perfil"> <!--Foto inserida pelo JS-->
+                            </div>
+                            <div style="margin-top: 30px;">
+                                <h5>Link para imagem:</h5>
+                                <input type="text" id="editPfp" name="editPfp" placeholder="Link da imagem"
+                                    style="border-radius: 5px; max-width: 300px; min-width: fit-content; height: 30px; width: 80%;">
+                            </div>
 
-                    <ul class="list-unstyled game-list row">
-                        <li class="col-lg-6 col-md-12 col-sm-12">
-                            <img class="game-image" style="width: 25%;" src="img/valorant-card.jpg" alt="Valorant">
-                            <h5 class="game-name">Valorant</h5>
-                        </li>
-                        <li class="col-lg-6 col-md-12 col-sm-12">
-                            <img class="game-image" style="width: 25%;" src="img/cs-card.jpg" alt="Counter Strike 2">
-                            <h5 class="game-name">Counter Strike 2</h5>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+                            <div style="text-align: justify;">
+                                <div id="currentBio">
+                                    <h4>Bio do Jogador</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident officiis in
+                                        vel nostrum optio, sit deleniti praesentium facere enim repudiandae!
+                                    </p> <!--Bio inserida pelo JS-->
+                                </div>
+                                <div style="text-align: center; margin-top: 30px;">
+                                    <h5>Bio:</h5>
+                                    <input type="text" id="editBioText" name="editBioText" placeholder="Bio"
+                                        style="border-radius: 5px; max-width: 600px; min-width: fit-content; height: 100px; width: 80%;">
+                                </div>
+                            </div>
+                        </div>
+                        <h3
+                            style="margin-top: 50px; text-align: left; color:white; text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F">
+                            Jogos Jogados
+                        </h3>
+
+                        <div>
+                            <h4 style="margin-top: 30px;">Selecione até 4 opções:</h4>
+                            <div class="Checkbox">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12"
+                                        style="border-radius: 50%; margin-bottom: 30px;">
+                                        <img class="game-image" style="width: 25%;" src="img/cs-card.jpg"
+                                            alt="Counter Strike 2">
+                                        <input type="checkbox" id="favGame0" value="0" name="gameChecklist">
+                                        <label for="favGame0">Counter Strike 2</label><br> <br>
+
+                                        <img class="game-image" style="width: 25%;" src="img/lol-card.jpeg"
+                                            alt="League of Legends">
+                                        <input type="checkbox" id="favGame1" value="1" name="gameChecklist">
+                                        <label for="favGame1">League of Legends</label><br> <br>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12"
+                                        style="border-radius: 50%; margin-bottom: 30px;">
+                                        <img class="game-image" style="width: 25%;" src="img/rocket-card.jpg"
+                                            alt="Rocket League">
+                                        <input type="checkbox" id="favGame2" value="2" name="gameChecklist">
+                                        <label for="favGame2">Rocket League</label><br> <br>
+
+                                        <img class="game-image" style="width: 25%;" src="img/valorant-card.jpg"
+                                            alt="Valorant">
+                                        <input type="checkbox" id="favGame3" value="3" name="gameChecklist">
+                                        <label for="favGame3">Valorant</label><br> <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div style="margin-bottom: 20px;">
+                            <button class="btn button-gamer" id="saveButton" type="button"
+                                onclick="getCheckedItems(); ">Salvar</button>
+                        </div>
+                        <div>
+                            <a class="btn button-gamer" id="cancelButton" href="Gprofile.html">Cancelar</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <button class="button-gamer" id="saveButton">Salvar</button>
-                    <button class="button-gamer" id="cancelButton">Cancelar</button>
-                </div>
+            </div>
         </main>
     </div>
     <!-- final main body -->
@@ -153,7 +193,8 @@
                     <h5 class="mb-3" style="letter-spacing: 2px;">Comunidade</h5>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-1">
-                            <a href="communityCreate.html" style="text-decoration: none; color: aqua;">Formador de equipe</a>
+                            <a href="communityCreate.html" style="text-decoration: none; color: aqua;">Formador de
+                                equipe</a>
                         </li>
                         <li class="mb-1">
                             <a href="community.html" style="text-decoration: none; color: aqua;">Grupo discord</a>
@@ -206,7 +247,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script src="main.js"></script>
+
+    <script src="main.js"></script>
 </body>
 
 </html>

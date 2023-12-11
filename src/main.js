@@ -71,7 +71,7 @@ const renderProfile = async () => {
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 text-center">
                         <h2>${profiles[idUsuarioLogado].nome}</h2>
-                        <img src="${profiles[idUsuarioLogado].foto}" style="width: 30%;" alt="Foto de Perfil">
+                        <img src="${profiles[idUsuarioLogado].foto}" style="width: 30%; object-fit: cover;" alt="Foto de Perfil">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <h4>Bio do Jogador</h4>
@@ -104,6 +104,32 @@ const renderProfile = async () => {
     container.innerHTML = perfil;
 }
 
+
+
+const renderEditProfile = async () => {
+    const res1 = await fetch(URL1);
+    const profiles = await res1.json();
+
+    const idUsuarioLogado = localStorage.getItem("idUsuarioLogado");
+
+    document.getElementById("currentName").innerHTML = `
+        <h2>${profiles[idUsuarioLogado].nome}</h2>
+    `;
+
+    document.getElementById("currentPfp").innerHTML = `
+        <img src="${profiles[idUsuarioLogado].foto}" style="width: 30%;" class="img-fluid"alt="Foto de Perfil">
+    `;
+
+    document.getElementById("currentBio").innerHTML = `
+        <h4>Bio do Jogador</h4>
+        <p>
+            ${profiles[idUsuarioLogado].bio}
+        </p>
+    `;
+
+
+}
+
 //funcao deslogar quando aperta o botao "sair" enquanto logado
 const deslogar = async () => {
     localStorage.setItem("idUsuarioLogado", "-1");
@@ -112,6 +138,7 @@ const deslogar = async () => {
 
 //chama funcoes sempre que pagina carrega
 window.addEventListener('DOMContentLoaded', (e) => renderProfile());
+window.addEventListener('DOMContentLoaded', (e) => renderEditProfile());
 window.addEventListener('DOMContentLoaded', (e) => renderHeaderPfp());
 
 
@@ -228,3 +255,78 @@ if (formRegister) {
     });
 }
 
+
+
+const editAll = async (userName, userPfp, userBio, userFavoriteGames) => {
+    const res1 = await fetch(URL1);
+    const profiles = await res1.json();
+
+    var newName = userName;
+    var newPfp = userPfp;
+    var newBio = userBio;
+    var newUserFavoriteGames = userFavoriteGames;
+
+    //checa quais estão vazios para manter
+    if(userName == "0" || userName == null){
+        newName = profiles[idUsuarioLogado].nome;
+    }
+    if(newPfp == "0" || newPfp == null){
+        newPfp = profiles[idUsuarioLogado].foto;
+    }
+    if(newBio == "0" || newBio == null){
+        newBio = profiles[idUsuarioLogado].bio;
+    }
+    if(newUserFavoriteGames == [] || newUserFavoriteGames == null){
+        newUserFavoriteGames = profiles[idUsuarioLogado].nome;
+    }
+
+
+    //muda no db
+    const data = {
+        nome: newName,
+        foto: newPfp,
+        bio: newBio,
+        idJogos: newUserFavoriteGames
+    }
+
+    const idUsuarioLogado = localStorage.getItem("idUsuarioLogado");
+
+    fetch(`${URL1}/${idUsuarioLogado}`, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+    })
+
+    window.location.replace('Gprofile.html');
+}
+
+
+
+const getCheckedItems = async () => {
+
+    const username = document.getElementById("editUsername").value;
+    const pfp = document.getElementById("editPfp").value;
+    const bio = document.getElementById("editBioText").value;
+
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkedItems = [];
+
+    checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          checkedItems.push(checkbox.value);
+        }
+    });
+
+    // Do something with the checked items
+    console.log("Checked items:", checkedItems);
+
+    console.log(username);
+    console.log(pfp);
+    console.log(bio);
+    // You can perform further actions with the checked items here
+
+    editAll(username, pfp, bio, checkedItems);
+
+
+
+}
