@@ -1,3 +1,8 @@
+function enviar() {
+    sendMail();
+    sendMail2();
+}
+
 function sendMail() {
     var params = {
         name: document.getElementById("name").value,
@@ -22,6 +27,27 @@ function sendMail() {
         .catch(err => console.log(err));
 }
 
+function sendMail2() {
+    var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+        denunciado: document.getElementById("denunciado").value,
+    };
+
+    const serviceID = "service_q2ympqp";
+    const templateID = "template_mrrhqdf";
+
+    emailjs.send(serviceID, templateID, params)
+        .then(res => {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            document.getElementById("denunciado").value = "";
+            console.log(res);
+        })
+        .catch(err => console.log(err));
+}
 
 function updateMessageField() {
     var checkboxes = document.querySelectorAll('.Checkbox input[type="checkbox"]:checked');
